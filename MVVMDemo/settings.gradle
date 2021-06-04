@@ -1,0 +1,6 @@
+include ':module0'
+include ':base'
+include ':module2'
+include ':module1'
+include ':app'
+rootProject.name = "MVVMDemo"
