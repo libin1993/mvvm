@@ -10,7 +10,6 @@ ext {
             minSdkVersion            : 21,
             targetSdkVersion         : 30,
 
-
             appcompatVersion         : "1.1.0",
             materialVersion          : "1.1.0",
             constraintlayoutVersion  : "1.1.3",
@@ -19,7 +18,8 @@ ext {
             annotationsVersion       : "24.0.0",
             roomVersion              : "2.2.5",
             lifecycleVersion         : "2.2.0",
-            retrofitVersion          : "2.6.2",
+            retrofitVersion          : "2.9.0",
+            rxjavaVersion            : "3.0.0",
             glideVersion             : "4.9.0",
             swiperefreshlayoutVersion: "1.1.0",
             arouterApiVersion        : "1.4.1",
@@ -43,6 +43,9 @@ ext {
             //导入retrofit
             "retrofit"            : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
             "converter-gson"      : "com.squareup.retrofit2:converter-gson:${versions["retrofitVersion"]}",
+            "adapter-rxjava"      : "com.squareup.retrofit2:adapter-rxjava:${versions["retrofitVersion"]}",
+            "rxjava"              : "io.reactivex.rxjava3:rxjava:${versions["rxjavaVersion"]}",
+            "rxAndroid"           : "io.reactivex.rxjava3:rxandroid:${versions["rxjavaVersion"]}",
             //导入glide
             "glide"               : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
             //下拉刷新

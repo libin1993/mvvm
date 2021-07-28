@@ -1,5 +1,6 @@
 package com.synway.module1;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 /**
@@ -8,4 +9,10 @@ import androidx.lifecycle.ViewModel;
  * Describe：
  */
 public class MyViewModel extends ViewModel {
+    public MutableLiveData<String> mutableLiveData = new MutableLiveData<>();
+
+    public void getData(){
+        mutableLiveData.setValue("11111");
+    }
+
 }

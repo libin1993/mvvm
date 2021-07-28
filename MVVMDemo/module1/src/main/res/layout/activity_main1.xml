@@ -2,6 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.synway.module1.MyViewModel" />
 
     </data>
 
@@ -13,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="module1"/>
+            android:text="@{viewModel.mutableLiveData}"/>
     </LinearLayout>
 
 </layout>

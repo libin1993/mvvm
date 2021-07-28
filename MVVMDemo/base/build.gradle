@@ -57,6 +57,10 @@ dependencies {
     //导入retrofit
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    //rxjava
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxAndroid"]
     //导入glide
     api rootProject.ext.dependencies["glide"]
     //下拉刷新

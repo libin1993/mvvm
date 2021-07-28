@@ -1,6 +1,7 @@
 package com.synway.mvvm.base;
 
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.util.LruCache;
 
 import java.lang.reflect.Array;
@@ -12,6 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import okhttp3.internal.cache.DiskLruCache;
+import rx.Observable;
+import rx.Observer;
+import rx.Subscriber;
 
 /**
  * Author：Libin on 2021/4/22 17:17
@@ -19,6 +23,8 @@ import okhttp3.internal.cache.DiskLruCache;
  * Describe：
  */
 class Test {
+    private static final String TAG = "libin";
+
     public static void main(String[] args) {
 //        System.out.println(romanToInt("II"));
 //        System.out.println("llll;"+longestCommonPrefix(new String[]{"ab","dab"}));
@@ -26,10 +32,35 @@ class Test {
 //        removeDuplicates(new int[]{1,2,2,3,4});
 //        test();
 //        System.out.println(multiply(4, 5));
+        rxJava();
 
         System.out.println(Arrays.toString(order(new int[]{1, 2, 3, 3, 4, 5, 6}, new int[]{1, 2, 2, 3, 4, 5, 5, 7, 8, 9, 10})));
     }
 
+    public static void rxJava() {
+        Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("1111111");
+
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onCompleted() {
+                
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                System.out.println("onNext: "+s);
+            }
+        });
+    }
 
     public static int[] order(int[] a, int[] b) {
         int[] c = new int[a.length + b.length];

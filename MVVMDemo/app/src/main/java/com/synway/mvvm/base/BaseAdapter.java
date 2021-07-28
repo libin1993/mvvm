@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.synway.mvvm.UserBean;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -27,20 +31,27 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         this.dataList = dataList;
     }
 
+//    @NonNull
+//    @Override
+//    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        View itemView = LayoutInflater.from(context).inflate(rid,parent,false);
+//        BaseViewHolder baseViewHolder = new BaseViewHolder(itemView);
+//        if (onClickListener !=null){
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    onClickListener.onClick(baseViewHolder.getLayoutPosition());
+//                }
+//            });
+//        }
+//        return baseViewHolder;
+//    }
+
     @NonNull
+    @NotNull
     @Override
-    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(rid,parent,false);
-        BaseViewHolder baseViewHolder = new BaseViewHolder(itemView);
-        if (onClickListener !=null){
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onClickListener.onClick(baseViewHolder.getLayoutPosition());
-                }
-            });
-        }
-        return baseViewHolder;
+    public BaseViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+        return null;
     }
 
     @Override
@@ -51,6 +62,12 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        UserBean userBean = (UserBean) dataList.get(position);
+        return userBean.getAge();
     }
 
     public void setOnClickListener(OnClickListener onClickListener) {
